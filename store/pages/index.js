@@ -12,10 +12,12 @@ export default function Home() {
         <link rel="icon" href="/shop.ico" />
       </Head>
       <main className={styles.main}>
-        <div>
-          <h1>Testing</h1>
-          <p1>sweet</p1>
-          <h2>Next is way better than React</h2>
+        <div className='hero-section'>
+          <div className='hero'>
+            <h1>Donut Shop</h1>
+            <p>Lots of donuts</p>
+            <button className='cta-bttn' type='button'>Shop Now</button>
+          </div>
         </div>
       </main>
     </>
