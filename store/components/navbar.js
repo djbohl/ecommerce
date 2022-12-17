@@ -6,8 +6,8 @@ const Navbar = () => {
             <Link href="/">
                 Home
             </Link>
-            <Link href="/menu">
-                Menu
+            <Link href="/gallery">
+                Gallery
             </Link>
         </div>
      );

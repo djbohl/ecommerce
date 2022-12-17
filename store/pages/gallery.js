@@ -1,0 +1,43 @@
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css';
+import style from '../styles/gallery.module.css';
+
+const Gallery = () => {
+
+const images = [
+    "/bluedonut.jpg",
+    "/carameldonut.jpg",
+    "/chocodonut.jpg",
+    "/sprinkledonut.jpg",
+    "/regdonut.jpg"
+];
+
+    return ( 
+        <div className={style.container}>
+            <Slide>
+                <div className='slide-effect'>
+                    <div className={style.image} alt="Blue Donut" style={{ 'backgroundImage' : `url(${images[0]})` }}>
+                    </div>
+                </div>
+                <div className='slide-effect'>
+                    <div className={style.image} alt="Caramel Donut" style={{ 'backgroundImage' : `url(${images[1]})`}}>
+                    </div>
+                </div>
+                <div className='slide-effect'>
+                    <div className={style.image} alt="Chocolate Donut" style={{ 'backgroundImage' : `url(${images[2]})` }}>
+                    </div>
+                </div>
+                <div className='slide-effect'>
+                    <div className={style.image} alt="Sprinkle Donut" style={{ 'backgroundImage' : `url(${images[3]})` }}>
+                    </div>
+                </div>
+                <div className='slide-effect'>
+                    <div className={style.image} alt="Frosted Donut" style={{ 'backgroundImage' : `url(${images[4]})` }}>
+                    </div>
+                </div>
+            </Slide>
+        </div>
+     );
+}
+ 
+export default Gallery;
