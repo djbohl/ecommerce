@@ -87,7 +87,7 @@ body {
 
 .hero-section {
   /* hero background image */
-  background-image: url(/donut.jpg);
+  background-image: url(/donutbg.jpg);
   height: 100vh;
   width: 100vw;
   background-size: 120%;
@@ -132,6 +132,8 @@ body {
   background-color: #ff8ceafb;
   color: #fff;
 }
+
+
 
 @media screen and (max-width: 800px) {
   .hero-section {
