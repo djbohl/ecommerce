@@ -5,36 +5,73 @@
 .coverContainer {
   display: flex;
   width: 100vw;
-  height: 80vh; 
+  height: 80vh;
   flex-direction: column;
   max-width: auto;
-  justify-content: top;
-  padding: 5em;
-  align-items: left;
-}
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 
-.coverContainer {
   margin-bottom: 0;
   background-image: url(/donutbg.jpg);
-  background-size: 125%;
-  background-position-x: left;
+  background-size: cover;
+  background-position-x: center;
   background-repeat: no-repeat;
 }
 
-.main {
-  display: block;
-  background-color: #fd43b63a;
-  border-radius: 12px;
-  prefix: 3;
-  max-width: fit-content;
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  align-self: center;
+  align-content: center;
 }
 
+.featured {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  align-self: center;
+  align-content: center;
+}
+
+
+.main {
+  background-color: #fd43b662;
+  border-radius: 12px;
+  prefix: 3;
+  max-width: 80vw;
+  min-height: 70vh;
+  padding: 1em;
+
+}
+
+.image {
+  width: auto;
+  height: 20em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+
 .h1 {
-  font-size: 6em;
+  font-size: 5em;
   color: #fff;
 }
 
 .lead {
+  font-weight: bold;
   font-size: 2em;
-  color: #fd43b6;
+  color: #ffd4ee;
 }

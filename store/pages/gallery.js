@@ -1,6 +1,7 @@
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 import style from '../styles/gallery.module.css';
+import { ArrowLeftCircle, ArrowRightCircle } from 'react-bootstrap-icons';
 
 const Gallery = () => {
 
@@ -12,9 +13,20 @@ const images = [
     "/regdonut.jpg"
 ];
 
+const buttonStyle = {
+    width: "66px",
+    background: 'none',
+    border: '0px'
+  };
+
+  const properties = {
+    prevArrow: <button style={{ ...buttonStyle }}><ArrowLeftCircle color='hotpink' size={44} /></button>,
+    nextArrow: <button style={{ ...buttonStyle }}><ArrowRightCircle color='hotpink' size={44} /></button>
+  }
+
     return ( 
         <div className={style.container}>
-            <Slide>
+            <Slide {...properties}>
                 <div className='slide-effect'>
                     <div className={style.image} alt="Blue Donut" style={{ 'backgroundImage' : `url(${images[0]})` }}>
                     </div>
