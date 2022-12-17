@@ -102,8 +102,8 @@ body {
 }
 
 .hero {
-  padding-left: 5em;
-  padding-bottom: 10em;
+  height: 32em;
+  padding-left: 5rem;
 }
 
 .hero h1 {
@@ -116,7 +116,7 @@ body {
 .hero p {
   font-size: 2em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  padding-bottom: 6em;
+  padding-bottom: 2em;
   color:  #350653;
 }
 
@@ -131,4 +131,29 @@ body {
 .cta-bttn:hover {
   background-color: #ff8ceafb;
   color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+  .hero-section {
+    height: 40vh;
+
+  }
+  
+  .hero {
+    height: 20em;
+    padding-left: 1em;
+  }
+  .hero h1 {
+    font-size: 2.5em;
+  }
+  
+  .hero p {
+    font-size: 1em;
+    padding-bottom: 1em;
+  }
+  
+  .cta-bttn {
+    width: 5em;
+    height: 2em;
+  }
 }
