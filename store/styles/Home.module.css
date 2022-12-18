@@ -46,8 +46,9 @@
 .box {
   display: flex;
   flex-direction: column;
-  background-color: #fd43b662;
+  background-color: #fd43b6a7;
   border-radius: 12px;
+  border: 1px solid #f7abdad2;
   padding: 1em;
   text-align: left;
   justify-content: center;
@@ -72,5 +73,5 @@
 .lead {
   font-weight: bold;
   font-size: 2em;
-  color: #ffd4ee;
+  color: #fff1f9;
 }
