@@ -1,0 +1,36 @@
+.checkout {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+}
+
+.tableTitles {
+    display: flex;
+    flex-direction: row;
+}
+
+.tableTitles>th {
+    padding-right: 4em;
+}
+
+.tableBody {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+}
+
+.tableBody>tr {
+    display: flex;
+    flex-direction: row;
+    gap: 4em;
+    align-self: flex-start;
+}

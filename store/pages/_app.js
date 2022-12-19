@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from '../components/layout';
 import '../styles/globals.css';
 import { useEffect } from "react";
+import { StoreProvider } from '../utils/cart';
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -9,8 +10,12 @@ export default function App({ Component, pageProps }) {
   }, []);
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <StoreProvider>
+      <Layout>
+        
+        <Component {...pageProps} />
+        
+      </Layout>
+      </StoreProvider>
   )
 }
