@@ -1,13 +1,9 @@
 .checkout {
+    padding: 6em;
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-}
-
-.table {
-    display: flex;
-    flex-direction: column;
     justify-self: center;
     align-self: center;
 }
@@ -24,13 +20,49 @@
 .tableBody {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
+}
 
+.name {
+    font-size: 0.8em;
+    padding: 0;
+}
+
+.quantity {
+    padding: 1em;
 }
 
 .tableBody>tr {
     display: flex;
     flex-direction: row;
-    gap: 4em;
+    flex-wrap: wrap;
+    gap: 3em;
     align-self: flex-start;
+}
+
+.tableBody>tr>td {
+    width: 4em;
+    height: 6em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 2em;
+    word-wrap: break-word;
+    align-items: center;
+    justify-content:center;
+}
+
+.total {
+    padding: 3em;
+}
+
+.circle {
+    border-radius: 50%;
+    background-color: rgb(255, 132, 192);
+}
+
+.button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
 }

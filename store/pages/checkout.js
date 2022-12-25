@@ -1,16 +1,18 @@
 import { useContext, useEffect, useState } from "react";
 import { Store } from "../utils/cart";
 import Image from 'next/image';
-import { XCircle } from 'react-bootstrap-icons';
+import { CircleFill, XCircle } from 'react-bootstrap-icons';
 import styles from '../styles/checkout.module.css';
 import Link from "next/link";
 import data from "../utils/data";
+import { get } from "http";
 
 const Checkout = () => {
 
     const { state, dispatch } = useContext(Store);
     const {
         cart: { cartProducts },
+        total,
     } = state;
 
     const removeProduct = (product) => {
@@ -18,12 +20,9 @@ const Checkout = () => {
         console.log('product removed');
     }
 
-    const updateCart = (product, qty) => {
-        const quantity = Number(qty);
-        dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
-    }
 
-   
+    const tax = 0.06;
+
 
     return (
         <div className={styles.checkout}>
@@ -41,7 +40,7 @@ const Checkout = () => {
                                         <th>Name</th>
                                         <th>Quantity</th>
                                         <th>Price</th>
-                                        <th>Action</th>
+                                        <th>Remove</th>
                                     </tr>
                                 </thead>
                                 <tbody className={styles.tableBody}>
@@ -57,55 +56,31 @@ const Checkout = () => {
                                                     ></Image>
                                                 </Link>
                                                 &nbsp;
-                                                {product.name}
+                                            </td>
+                                            <td>
+                                            {product.name}
                                             </td>
                                             <td>{product.quantity} </td>
-                                            <td><select value={product.quantity} onChange={(e) => updateCart
-                                                (product, e.target.value)}>
-                                                {[...Array(product.stock).keys()].map((x) => (
-                                                    <option key={x + 1} value={x + 1}>
-                                                        {x + 1}
-                                                    </option>
-                                                ))}
-                                            </select></td>
-                                            <td> ${product.price * product.quantity }</td>
+                                            <td>{product.price}</td>
                                             <td>
-                                                <button onClick={() => removeProduct(product)}>
-                                                    <XCircle size={22}></XCircle></button>
+                                                <button onClick={() => removeProduct(product)} className={styles.button}>
+                                                    <XCircle size={22} className={styles.circle}></XCircle></button>
                                             </td>
                                         </tr>
                                     ))}
                                 </tbody>
                             </table>
+                            <div className={styles.total}>
+                            <h3> Subtotal : ${total.toFixed(2)} </h3>
+                            <h4> Total After Tax: ${((total * tax) + total).toFixed(2)}</h4>
+                        </div>
                         </div>
                     )
                     }
+
                 </div>
             </div>
-            {cartProducts.length === 0 ? (
-                <div></div>
-            ) : (
-                <div className="checkoutForm">
-                    <h2>
-                        Checkout
-                    </h2>
-                    <form>
-                        <label >
-                            Name:
-                            <input type="text" name="name" />
-                        </label>
-                        <label >
-                            Zip Code:
-                            <input type={Number} name="zipcode" />
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>
-                    <h1>Total Cost After Taxes</h1>
-                    <p></p>
-                </div>
-            )}
         </div>
     );
 }
-
 export default Checkout;

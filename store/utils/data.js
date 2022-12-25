@@ -14,7 +14,7 @@ const data = {
          slug: 'cotton-candy-donut',
          category: 'Donuts',
          image: '/bluedonut.jpg',
-         price: 2.99,
+         price: 3.99,
          stock: 10,
          description: 'Cotton candy flavored donut with blue frosting and cand topping.'
       },
@@ -23,7 +23,7 @@ const data = {
          slug: 'caramel-donut',
          category: 'Donuts',
          image: '/carameldonut.jpg',
-         price: 2.99,
+         price: 3.99,
          stock: 10,
          description: 'Vanilla frosted donut with caramel topping.'
       },
@@ -32,7 +32,7 @@ const data = {
          slug: 'choco-donut',
          category: 'Donuts',
          image: '/chocodonut.jpg',
-         price: 1.99,
+         price: 3.99,
          stock: 10,
          description: 'Chocolate frosted donut with sprinkles. Made with real cocoa.'
       },
@@ -41,7 +41,7 @@ const data = {
          slug: 'cinnamon-donut',
          category: 'Donuts',
          image: '/cindonut.jpg',
-         price: 1.99,
+         price: 3.99,
          stock: 10,
          description: 'Savory cinnamon covered glazed donut.'
       },
@@ -50,7 +50,7 @@ const data = {
          slug: 'glazed-donut',
          category: 'Donuts',
          image: '/regdonut.jpg',
-         price: 1.99,
+         price: 3.99,
          stock: 10,
          description: 'Fresh glazed donut made daily.'
       }
