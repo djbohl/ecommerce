@@ -12,29 +12,29 @@ export default function ProductItem({ product }) {
     const addToCartHandler = () => {
         if (isAddingToCart) {
             return; // Prevent multiple rapid clicks
-          }
-          if (product.stock <= 0) {
+        }
+        if (product.stock <= 0) {
             alert(`Sorry we are out of this donut.`);
             return;
-          }
-        
-          // Update the product's stock before adding to the cart
-          if (product.stock > 0) {
+        }
+
+        // Update the product's stock before adding to the cart
+        if (product.stock > 0) {
             product.stock -= 1;
-          }
-        
-          setIsAddingToCart(true); // Set loading state
-        
-          dispatch({ type: 'CART_ADD_ITEM', payload: { ...product } });
-          dispatch({ type: 'UPDATE_TOTAL', payload: { ...product } });
+        }
 
-        
-          setIsAddingToCart(false); // Reset loading state after dispatch
+        setIsAddingToCart(true); // Set loading state
 
-          
-      };
-      
-      
+        dispatch({ type: 'CART_ADD_ITEM', payload: { ...product } });
+        dispatch({ type: 'UPDATE_TOTAL', payload: { ...product } });
+
+
+        setIsAddingToCart(false); // Reset loading state after dispatch
+
+
+    };
+
+
 
     return (
         <div className={styles.productcard}>
@@ -52,8 +52,8 @@ export default function ProductItem({ product }) {
                 </h2>
                 <p className="mb-2">{product.description}</p>
                 <p>{product.price}</p>
-                <button 
-                    className="primary-button" 
+                <button
+                    className="btn btn-secondary " 
                     type="button"
                     onClick={addToCartHandler}>
                     Add to cart
