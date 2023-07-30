@@ -9,10 +9,12 @@ const Navbar = () => {
 
     const { state, dispatch } = useContext(Store);
 
-    const { cart } = state;
+    const cartProductsLength = state.cart && state.cart.cartProducts ? state.cart.cartProducts.length : 0;
+    const cartProductsCount = state.cart.cartProducts.reduce((total, product) => total + product.quantity, 0);
+
 
     return (
-        <div className='navbar'>
+        <div className='navbar' style={{position: 'fixed', backgroundColor: 'white', width: '100vw'}}>
             <Link href="/">
                 Home
             </Link>
@@ -25,13 +27,7 @@ const Navbar = () => {
             <div className='checkout'>
                 <Link href="/checkout">
                     <BagHeart color="hotpink" size={44}></BagHeart>
-                    {
-                        cart.cartProducts.length > 0 && (
-                            <span>
-                                {cart.cartProducts.reduce((a, c) => a + c.quantity, 0)}
-                            </span>
-                        )
-                    }
+                    {cartProductsLength > 0 && <span>{cartProductsCount}</span>}
                 </Link>
             </div>
         </div>

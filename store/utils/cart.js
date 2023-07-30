@@ -4,31 +4,34 @@ export const Store = createContext();
 
 const initialState = {
     cart: { cartProducts: [] },
-    total: 0,
+    totalPrice: 0
 };
 
 function reducer(state, action) {
     switch (action.type) {
         case 'CART_ADD_ITEM': {
             const newProduct = action.payload;
+            const cart = state.cart || {}; // Check if cart object exists
+            const cartProducts = cart.cartProducts || []; // Check if cartProducts array exists
             const existingProduct = state.cart.cartProducts.find(
                 (product) => product.slug === newProduct.slug
             );
-            const cartProducts = existingProduct ? state.cart.cartProducts.map((product) =>
-                product.name === existingProduct.name ? newProduct : product
-            ) :
-                [...state.cart.cartProducts, newProduct];
 
-            let totalItems = 1;
-            for (const product of state.cart.cartProducts) {
-                totalItems += product.quantity;
+            if (existingProduct) {
+                // Product already exists, update the quantity
+                const cartProducts = state.cart.cartProducts.map((product) =>
+                    product.slug === existingProduct.slug
+                        ? { ...product, quantity: product.quantity + 1 }
+                        : product
+                );
+
+                return { ...state, cart: { ...state.cart, cartProducts } };
+            } else {
+                // Add a new product to the cart with an initial quantity of 1
+                const updatedCartProducts = [...cartProducts, { ...newProduct, quantity: 1 }];
+
+                return { ...state, cart: { ...cart, cartProducts: updatedCartProducts } };
             }
-
-            const price = 3.99;
-
-            const subtotal = totalItems * price;
-
-            return { ...state, cart: { ...state.cart, cartProducts }, total: subtotal }
         }
         case 'CART_REMOVE_ITEM': {
             const cartProducts = state.cart.cartProducts.filter(
@@ -37,9 +40,17 @@ function reducer(state, action) {
 
             return { ...state, cart: { ...state.cart, cartProducts } };
         }
+        case 'UPDATE_TOTAL': {
+            const cartProducts = state.cart.cartProducts;
 
-        default:
-            return state;
+            // Calculate the total price for each individual product (price * quantity)
+            const individualProductTotals = cartProducts.map((product) => product.price * product.quantity);
+          
+            // Calculate the overall cart total by summing up the individual product totals
+            const totalPrice = individualProductTotals.reduce((total, productTotal) => total + productTotal, 0).toFixed(2);
+          
+            return { ...state, totalPrice };
+        }
     }
 }
 

@@ -12,18 +12,18 @@ const Checkout = () => {
     const { state, dispatch } = useContext(Store);
     const {
         cart: { cartProducts },
-        total,
     } = state;
+    const totalPrice = state.totalPrice; // Assuming 'totalPrice' is the key in the state where you store the calculated subtotal
+
 
     const removeProduct = (product) => {
         dispatch({ type: 'CART_REMOVE_ITEM', payload: product, quantity: 0 });
+        dispatch({ type: 'UPDATE_TOTAL', payload: { ...product } });
+
         console.log('product removed');
     }
 
-
-    const tax = 0.06;
-
-
+   
     return (
         <div className={styles.checkout}>
             <h1>Your Order</h1>
@@ -60,8 +60,8 @@ const Checkout = () => {
                                             <td>
                                             {product.name}
                                             </td>
-                                            <td>{product.quantity} </td>
-                                            <td>{product.price}</td>
+                                            <td> {product.quantity} </td>
+                                            <td>{product.price * product.quantity}</td>
                                             <td>
                                                 <button onClick={() => removeProduct(product)} className={styles.button}>
                                                     <XCircle size={22} className={styles.circle}></XCircle></button>
@@ -71,12 +71,12 @@ const Checkout = () => {
                                 </tbody>
                             </table>
                             <div className={styles.total}>
-                            <h3> Subtotal : ${total.toFixed(2)} </h3>
-                            <h4> Total After Tax: ${((total * tax) + total).toFixed(2)}</h4>
+                            <h3> Subtotal : {totalPrice} </h3>
                         </div>
                         </div>
                     )
                     }
+                    
 
                 </div>
             </div>

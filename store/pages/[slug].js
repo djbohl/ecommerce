@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router';
 import data from '../utils/data';
+import { useContext } from 'react';
+
 
 const ProductPage = (props) => {
 
@@ -12,19 +14,6 @@ const ProductPage = (props) => {
         return <div>Product Not Found</div>
     }
 
-    const addToCartHandler = () => {
-        const existingProduct = state.cart.cartProducts.find((x) => x.slug === product.slug);
-        const quantity = existingProduct ? existingProduct.quantity + 1 : 1;
-    
-
-        if (product.stock < quantity) {
-            Alert(`Sorry we are out of ${quantity} many donuts.`);
-            return;
-        }
-
-        dispatchEvent({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
-        router.push('/cart');
-    }
     return (
         <div className='productpage'>
             <div>
