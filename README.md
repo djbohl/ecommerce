@@ -19,7 +19,6 @@ Project is created with:
 * Promotional slideshow cards that link to shop items
 * Menu with product cards
 * Utilities:
-  - Cartprovider and useContext to..
     - Add to cart
     - Update Cart
     - Remove from Cart
