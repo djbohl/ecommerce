@@ -69,6 +69,8 @@
     align-items: center;
     justify-content: center;
     width: 30%;
+    min-width: fit-content;
+    padding: 0px 4px 0px 4px;
     height: 40px;
     align-self: center;
     color: var(--white);
