@@ -4,6 +4,7 @@ import style from '../styles/gallery.module.css';
 import { ArrowLeftCircle, ArrowRightCircle } from 'react-bootstrap-icons';
 
 const Gallery = () => {
+    //this is the gallery page
 
 const images = [
     "/bluedonut.jpg",
@@ -23,6 +24,8 @@ const buttonStyle = {
     prevArrow: <button style={{ ...buttonStyle }}><ArrowLeftCircle color='hotpink' size={44} /></button>,
     nextArrow: <button style={{ ...buttonStyle }}><ArrowRightCircle color='hotpink' size={44} /></button>
   }
+
+ 
 
     return ( 
         <div className={style.container}>

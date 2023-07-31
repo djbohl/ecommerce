@@ -7,14 +7,20 @@ import { useContext } from "react";
 
 const Navbar = () => {
 
-    const { state, dispatch } = useContext(Store);
+    const { state } = useContext(Store);
 
     const cartProductsLength = state.cart && state.cart.cartProducts ? state.cart.cartProducts.length : 0;
     const cartProductsCount = state.cart.cartProducts.reduce((total, product) => total + product.quantity, 0);
 
 
     return (
-        <div className='navbar' style={{position: 'fixed', backgroundColor: 'white', width: '100vw'}}>
+        <div className='navbar' 
+        style={{
+            position: 'fixed', 
+            backgroundColor: 'white', 
+            width: '100vw',
+            zIndex: '2'
+        }}>
             <Link href="/">
                 Home
             </Link>

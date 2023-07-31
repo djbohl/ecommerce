@@ -1,7 +1,7 @@
-{
-   "products": [
+[
      {
        "name": "Birthday Donut",
+       "id": 1,
        "slug": "birthday-donut",
        "category": "Donuts",
        "image": "/sprinkledonut.jpg",
@@ -11,6 +11,7 @@
      },
      {
        "name": "Cotton Candy Donut",
+       "id": 2,
        "slug": "cotton-candy-donut",
        "category": "Donuts",
        "image": "/bluedonut.jpg",
@@ -20,6 +21,7 @@
      },
      {
        "name": "Caramel Donut",
+       "id": 3,
        "slug": "caramel-donut",
        "category": "Donuts",
        "image": "/carameldonut.jpg",
@@ -29,6 +31,7 @@
      },
      {
        "name": "Choco Donut",
+       "id": 4,
        "slug": "choco-donut",
        "category": "Donuts",
        "image": "/chocodonut.jpg",
@@ -38,6 +41,7 @@
      },
      {
        "name": "Cinnamon Donut",
+       "id": 5,
        "slug": "cinnamon-donut",
        "category": "Donuts",
        "image": "/cindonut.jpg",
@@ -47,6 +51,7 @@
      },
      {
        "name": "Glazed Donut",
+       "id": 6,
        "slug": "glazed-donut",
        "category": "Donuts",
        "image": "/regdonut.jpg",
@@ -55,5 +60,3 @@
        "description": "Fresh glazed donut made daily."
      }
    ]
- }
- 

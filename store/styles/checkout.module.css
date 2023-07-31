@@ -1,3 +1,4 @@
+
 .checkout {
     padding: 6em;
     display: flex;
@@ -6,25 +7,66 @@
     align-items: center;
     justify-self: center;
     align-self: center;
+    
 }
 
-.tableTitles {
-    display: flex;
-    flex-direction: row;
-}
-
-.tableTitles>th {
-    padding-right: 4em;
-}
-
-.tableBody {
+.card {
     display: flex;
     flex-direction: column;
-    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
+.cardbody {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+
+}
+
+.cardwrapper {
+    background-color: var(--white);
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid pink;
+    
+}
+
+
+.cardcontainer {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cardimage {
+    padding: 2em;
+
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6vw;
+    align-items: baseline;
+    justify-content: center;
+}
+
+
 .name {
-    font-size: 0.8em;
+    font-size: 1.2em;
     padding: 0;
 }
 
@@ -32,25 +74,7 @@
     padding: 1em;
 }
 
-.tableBody>tr {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 3em;
-    align-self: flex-start;
-}
 
-.tableBody>tr>td {
-    width: 4em;
-    height: 6em;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 2em;
-    word-wrap: break-word;
-    align-items: center;
-    justify-content:center;
-}
 
 .total {
     padding: 3em;
@@ -58,11 +82,22 @@
 
 .circle {
     border-radius: 50%;
-    background-color: rgb(255, 132, 192);
+    background-color: var(--bubblegum-pink);
 }
 
 .button {
     border: none;
-    background-color: transparent;
-    padding: 0;
+    background-color: var(--light-pink);
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
+}
+
+.quantityButtonWrapper {
+    display: flex;
+    flex-direction: row;
 }

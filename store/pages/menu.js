@@ -1,15 +1,15 @@
 import ProductItem from "../components/product";
-import data from "../utils/data";
+import storeItems from "../utils/data.json";
 import styles from '../styles/menu.module.css'
 
 const Menu = () => {
+    //this is where the products are being rendered 
     return ( 
         <div className={styles.menu}>
-            {data.products.map((product) => (
-                <ProductItem 
-                    product={product}
-                    key={product.slug}>
-                </ProductItem>
+            {storeItems.map(item => (
+               <div key={item.id}>
+                <ProductItem {...item} />  
+               </div>
             ))}
         </div>
      );

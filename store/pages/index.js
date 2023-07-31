@@ -9,6 +9,7 @@ import { ArrowLeftCircle, ArrowRightCircle, Cart } from 'react-bootstrap-icons';
 
 
 export default function Home() {
+  //this is the home page
 
   const featured = "/sprinkledonut.jpg";
 
@@ -23,6 +24,8 @@ export default function Home() {
     nextArrow: <button style={{ ...buttonStyle }}><ArrowRightCircle color='white' size={44} /></button>
   }
 
+ 
+
   return (
     <>
       <Head>
@@ -35,8 +38,8 @@ export default function Home() {
       <div className={styles.coverContainer}>
         <div>
           <main>
-            <Slide {...properties}>
-              <div className='slide-effect' canSwipe={true} autoplay={false} infinite={false}>
+            <Slide {...properties} autoplay={false}>
+              <div className='slide-effect' canswipe="true" infinite="false">
                 <div className={styles.intro}>
                   <div className={styles.box}>
                     <h1 className={styles.h1}>Donut Shop</h1>
@@ -47,11 +50,13 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className='slide-effect' canSwipe={true} autoplay={false} infinite={false}>
-                <div className={styles.featured}>
-                  <div className={styles.box}>
-                    <h1 className={styles.h1}>Featured</h1>
-                    <div className={styles.image} alt="Sprinkle Donut" style={{ 'backgroundImage': `url(${featured})` }}>
+              <div className='slide-effect' canswipe="true" infinite="false">
+                <div className={styles.intro}>
+                  <div className={styles.featured}>
+                    <div className={styles.box}>
+                      <h1 className={styles.h1}>Featured</h1>
+                      <div className={styles.image} alt="Sprinkle Donut" style={{ 'backgroundImage': `url(${featured})` }}>
+                      </div>
                     </div>
                   </div>
                 </div>

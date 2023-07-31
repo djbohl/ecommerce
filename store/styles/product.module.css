@@ -1,6 +1,79 @@
 .productcard {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 10px;
+    background-color: rgb(251, 252, 255);
+    height: 90vh;
+    min-width: 30vw;
+}
+
+.productcard h2 {
+    font-size: 1.5em;
+}
+
+
+.imageContainer {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+}
+
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantityButtonWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
+.removeButtonWrapper {
+    margin: .5em;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+}
+
+.button {
+    border: none;
+    background-color: var(--light-pink);
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 30px;
+}
+
+.buttonRemove {
+    border: none;
+    background-color: rgb(255, 0, 0);
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 40px;
+    align-self: center;
+    color: var(--white);
+}
+
+.buttonRemove:hover {
+    background-color: var(--hot-pink);
 }

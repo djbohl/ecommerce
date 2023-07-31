@@ -1,4 +1,11 @@
 
+:root {
+--bubblegum-pink: #fd43b6;
+--light-pink: #ff97d7;
+--hot-pink: #9d0b76;
+--light-grey: rgb(160, 160, 160);
+--white: #fbfbfb;
+}
 
 
 * {
@@ -11,7 +18,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: #ffffff;
+  background-color: var(--white);
 }
 
 .navbar {
@@ -25,15 +32,15 @@ body {
 .navbar a {
   font-size: 2em;
   text-decoration: none;
-  color: #fd43b6;
+  color: var(--bubblegum-pink);
 }
 
 .navbar a:hover {
-  color: #ff97d7;
+  color: var(--light-pink);
 }
 
 .navbar a:focus {
-  color: grey;
+  color: var(--light-grey);
 }
 
 .footer {
@@ -44,16 +51,16 @@ body {
 .footer h1 {
   font-size: 1em;
   text-align: center;
-  color: #fd43b6;
+  color: var(--bubblegum-pink);
 }
 
 .btn-secondary {
-  background-color: #9d0b76;
+  background-color: var(--hot-pink);
   border-style: none;
 }
 
 .btn-secondary:hover {
-  background-color: #ff97d7;
+  background-color: var(--light-pink);
 }
 
 .slide-effect {
@@ -63,3 +70,4 @@ body {
 .react-slideshow-container {
   width: 80vw;
 }
+
